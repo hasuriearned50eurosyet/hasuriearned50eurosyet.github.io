@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Has Uri Earned 50 Euros Yet?</title>
+</head>
+<body>
+    <script>
+        const userAgent = navigator.userAgent.toLowerCase();
+        
+        if (userAgent.includes("curl")) {
+            document.body.innerText = "no";
+        } else if (userAgent.includes("fetch") || userAgent.includes("http") || userAgent.includes("axios")) {
+            document.body.innerText = JSON.stringify({ response: "no" });
+        } else {
+            document.body.innerHTML = "<h1>NO</h1>";
+        }
+    </script>
+</body>
+</html>
